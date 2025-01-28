@@ -202,26 +202,26 @@ from unittest import result
 # Пример:
 # Введите максимально допустимый уровень опасности: 0.01
 # Приблизительная глубина безопасной кладки: 0.732421875 м
-def get_current_danger(d):
-    return d ** 3 - 3 * d ** 2 - 12 * d + 10
-def find_safe_depth(danger_level):
-    min_depth = 0
-    max_depth = 4
-    middle_depth = (min_depth + max_depth) / 2
-    middle_danger = get_current_danger(middle_depth)
-
-    while abs(middle_danger) > danger_level:
-        if middle_danger > 0:
-            min_depth = middle_depth
-        else:
-            max_depth = middle_depth
-        middle_depth = (min_depth + max_depth) / 2
-        middle_danger = get_current_danger(middle_depth)
-    return middle_depth
-
-
-danger_level = float(input('Enter the maximum allowable danger level:\n'))
-if danger_level < 0:
-    print('The maximum allowable danger level must be greater than zero.')
-else:
-    print(find_safe_depth(danger_level))
+# def get_current_danger(d):
+#     return d ** 3 - 3 * d ** 2 - 12 * d + 10
+# def find_safe_depth(danger_level):
+#     min_depth = 0
+#     max_depth = 4
+#     middle_depth = (min_depth + max_depth) / 2
+#     middle_danger = get_current_danger(middle_depth)
+#
+#     while abs(middle_danger) > danger_level:
+#         if middle_danger > 0:
+#             min_depth = middle_depth
+#         else:
+#             max_depth = middle_depth
+#         middle_depth = (min_depth + max_depth) / 2
+#         middle_danger = get_current_danger(middle_depth)
+#     return middle_depth
+#
+#
+# danger_level = float(input('Enter the maximum allowable danger level:\n'))
+# if danger_level < 0:
+#     print('The maximum allowable danger level must be greater than zero.')
+# else:
+#     print(find_safe_depth(danger_level))
